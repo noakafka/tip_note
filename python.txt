@@ -1,3 +1,11 @@
+# 2차원 리스트 정보 입력 받기
+n, m = map(int, input().split())
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input())))
+
+
+
 
 # 2차원 리스트의 회전
 
@@ -82,3 +90,65 @@ data = [1, 2, 3]
 num = 3 (or 2...)
 list(itertools.combinations(data, num))
 
+- 재귀함수로 Factorial 구현하기
+def factorial(n):
+    if n<=1:
+        return 1
+    return n * factorial(n-1)
+
+
+
+
+# DFS 
+1. Stack 을(를) 기본으로 구현 (FILO)------list
+stack = []
+
+2. 재귀함수(Recursive Function) 사용
+
+3. Process
+    1) 탐색 노드를 스택에 삽입하고 방문처리.
+    2) 스택의 최상단 노드에 방문하지 않은 인접노드가 하나라도 있으면 그 노드를 스택에 넣고 방문처리. 
+                          방문하지않은 인접 노드가 없으면 스택에서 최상단 노드를 꺼냄.
+    3) 더 이상 2번과정을 수행할 수 없을 때까지 반복.
+    
+4. 예제 소스
+def dfs(graph, v, visited):
+    # 현재 노드를 방문처리
+    visited[v] = true
+    # 현재 노드와 연결된 다른 노드를 재귀적 방문
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+            
+            
+
+# BFS 
+1. Queue 을(를) 기본으로 구현 (FIFO)------dequeue()
+from collections import deque
+queue = deque()
+queue.append(5) //insert
+queue.popleft() //delete
+queue.reverse() //reverse
+
+*** deque()의 경우 연결리스트로 구성되어 있기 때문에 pop(0)의 경우 O(1)의 시간으로 가능. but List Type은 하나씩 앞으로 다 땡겨야함 ***
+
+2. 재귀함수(Recursive Function) 사용
+
+3. Process
+    1) 탐색 노드를 큐에 삽입하고 방문처리.
+    2) 큐에서 노드를 꺼낸 뒤, 해당 노드의 인접노드 중 방문하지 않은 노드를 모두 큐에 삽입하고 방문처리.
+    3) 더 이상 2번과정을 수행할 수 없을 때까지 반복.
+    
+4. 예제 소스
+def bfs(graph, start, visited):
+    # 큐 구현
+    queue = deque([start])
+    # 현재 노드를 방문처리
+    visited[start] = true
+    # 큐가 빌 때까지 반복
+    while queue:
+        v = queue.popleft()
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
