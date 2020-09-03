@@ -16,6 +16,8 @@ new_str = ''.join(str_list)
 new_str = ''.join(sorted(str_list))
 new_str = ''.join(sorted(str_list, reverse = True))
 
+- char to num(알파벳 크기 )
+num = ord(c)
 
 
 
@@ -73,7 +75,9 @@ list.remove(by value)
 > 깊은 복사(를 하게되면 a와 b의 value가 독립적으로 작용)
   b = copy.deepcopy(a)
 
-
+- sort
+list.sort()
+list.sort(reverse = True)
 
 
 # dictionary
