@@ -1,3 +1,15 @@
+# string type 처리
+
+- char list -> str
+new_str = ''.join(str_list)
+
+- save after sort
+new_str = ''.join(sorted(str_list))
+new_str = ''.join(sorted(str_list, reverse = True))
+
+
+
+
 # 2차원 리스트 정보 입력 받기
 n, m = map(int, input().split())
 graph = []
