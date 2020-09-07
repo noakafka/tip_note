@@ -21,29 +21,6 @@ num = ord(c)
 
 
 
-# 2차원 리스트 정보 입력 받기
-n, m = map(int, input().split())
-graph = []
-for i in range(n):
-    graph.append(list(map(int, input())))
-
-
-
-
-# 2차원 리스트의 회전
-
-- 90도 (규칙성만 기억하면 180, 270도 해결 가능)
-def rotate_90(m):
-    N = len(m)
-    ret = [[0] * N for _ in range(N)]
-    
-
-    for r in range(N):
-        for c in range(N):
-            ret[c][N-1-r] = m[r][c]
-    return ret
-    ---- 설명 : https://shoark7.github.io/programming/algorithm/rotate-2d-array -----
-
 
 
 
@@ -78,6 +55,60 @@ list.remove(by value)
 - sort
 list.sort()
 list.sort(reverse = True)
+
+
+
+
+
+# 2차원 리스트의 생성
+map = [[0]*10 for i in range(10)]                   ---> 10 X 10 2차원 배열 생성
+map = [[0]*10] * 10                                 ---> same
+map = [[0 for i in range(10)] for i in range(10)]   ---> same
+
+
+
+
+# 2차원 리스트의 동적 할당
+map = []                    // 배열 생성
+map.append([1,2,3])         // 배열을 map에 append      ----> result : [[1,2,3]]
+
+or
+
+map = []                    // 배열 생성
+map.append([])              // 빈 배열을 map에 append
+map[0].append(1)            // append된 배열을 찾아가 value를 append
+map[0].append(2)
+map[0].append(3)            ----> result : [[1,2,3]]
+
+
+
+
+
+# 2차원 리스트 정보 입력 받기
+n, m = map(int, input().split())
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input())))
+
+
+
+
+# 2차원 리스트의 회전
+
+- 90도 (규칙성만 기억하면 180, 270도 해결 가능)
+def rotate_90(m):
+    N = len(m)
+    ret = [[0] * N for _ in range(N)]
+    
+
+    for r in range(N):
+        for c in range(N):
+            ret[c][N-1-r] = m[r][c]
+    return ret
+    ---- 설명 : https://shoark7.github.io/programming/algorithm/rotate-2d-array -----
+
+
+
 
 
 # dictionary
