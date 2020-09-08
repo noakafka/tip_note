@@ -38,10 +38,15 @@ for item in data : <----------item에 data[0], data[1] ... 이 대입
 
 # list
 
+- insert
+list.insert(idx, val)
+
+
 - pop & remove
 list.pop(by idx)
 list.pop(-1) <--------제일 마지막 idx
 list.remove(by value)
+
 
 - 복사 (얕은 / 깊은 복사)
 > 얕은 복사(를 하게되면 b의 vaule를 바꿀 때 a의 value도 바뀐다)
@@ -51,6 +56,7 @@ list.remove(by value)
 
 > 깊은 복사(를 하게되면 a와 b의 value가 독립적으로 작용)
   b = copy.deepcopy(a)
+
 
 - sort
 list.sort()
