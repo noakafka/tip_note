@@ -168,6 +168,16 @@ if 'noa' in dic : <-------true or false
 
 
 
+# dictionary를 grapb(BFS)에서 최적화 하는 방법
+dic = {}
+dic['좌표데이터' : min 방문 횟수]
+BFS를 반복하며 찾고자 하는 좌표가 dic에 없으면, depth            ---> dic['x,y'] = depth
+                                     있으면, depth의 대소비교   ---> if dic['x,y'] > depth : dic['x,y'] = depth
+
+
+
+
+
 
 # 순열과 조합
 
@@ -246,3 +256,5 @@ def bfs(graph, start, visited):
             if not visited[i]:
                 queue.append(i)
                 visited[i] = True
+                
+5. Dictonary를 이용해서 depth 최적화하면 DP와 같은 원리 적용
