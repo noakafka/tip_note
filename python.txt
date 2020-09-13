@@ -8,6 +8,14 @@ class Node:
 
 
 
+# 대,소문자
+s.upper()
+s.lower()
+
+
+
+
+
 # string type 처리
 
 - char list -> str
