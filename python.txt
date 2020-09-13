@@ -8,6 +8,14 @@ class Node:
 
 
 
+# str 16진수 -> 10진수
+str = A14F90
+answer = int(str, 16)
+
+
+
+
+
 # 대,소문자
 s.upper()
 s.lower()
