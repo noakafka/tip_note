@@ -21,8 +21,12 @@ s.upper()
 s.lower()
 
 
+# 문자열 제거 or 변경
+input = "my name is noa"
+input = input.replace("my", "your")
 
-
+print(input) ------> your name is noa
+    
 
 # string type 처리
 
