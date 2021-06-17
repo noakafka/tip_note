@@ -6,14 +6,9 @@ class Node:
         self.val = 0
 
 
-
-
 # str 16진수 -> 10진수
 str = A14F90
 answer = int(str, 16)
-
-
-
 
 
 # 대,소문자
@@ -21,12 +16,20 @@ s.upper()
 s.lower()
 
 
-# 문자열 제거 or 변경
+# 문자열 제거 or 변경(replace)
 input = "my name is noa"
 input = input.replace("my", "your")
 
 print(input) ------> your name is noa
-    
+
+
+# 문자열 제거 or 변경(join)
+string = "Hey! What's up?"
+characters = "'!?"
+
+string = ''.join( x for x in string if x not in characters)
+print(string) ------> Hey Whats up
+
 
 # string type 처리
 
