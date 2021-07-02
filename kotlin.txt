@@ -1,0 +1,53 @@
+# 함수
+fun foo(args:Array<String>): Unit{
+  //Unit은 반환값이 없는 타입을 의미. 생략 가능
+}
+
+fun foo(sugar : String, egg : String = "EGG"): String{
+  // 파라미터에 기본값 대입 가능
+  var cake = "$sugar 와 $egg 가 들어간 케이크가 완성되었습니다."
+  return cake
+}
+
+
+----------------------------------------------------
+# 배열
+var Array = arrayOf<TYPE>()
+var Array = intArrayOf()
+var Array = charArrayOf()
+var Array = booleanArrayOf()
+
+
+var Array = Array(SIZE, {VALUE})
+e.g) var arr = Array(10, {0})
+
+# 값 넣고 빼기
+arr.set(IDX, VALUE)
+arr[IDX] = VALUE
+
+arr.get(IDX)
+arr[IDX]
+
+----------------------------------------------------
+# for문
+for(i in 1..10){
+
+}
+
+for(i in userList){
+  //i는 인덱스가 아니라 userList[idx]
+}
+
+for(i in 1 until 100){
+  // until 뒤에 오는 수(100)를 포함하지 않음.
+}
+
+for(i in 10 downTo 1){
+
+}
+
+for(i in 1 .. 100 step 2){
+  //증감폭이 2
+}
+
+----------------------------------------------------
