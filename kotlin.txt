@@ -20,6 +20,7 @@ var Array = booleanArrayOf()
 
 var Array = Array(SIZE, {VALUE})
 e.g) var arr = Array(10, {0})
+     var arr = Array(3, {i -> i.toString()})
 
 # 값 넣고 빼기
 arr.set(IDX, VALUE)
@@ -27,6 +28,44 @@ arr[IDX] = VALUE
 
 arr.get(IDX)
 arr[IDX]
+
+# 2차원 배열
+var arr = Array<intArray>(3,{intArray{3}})  // 3 X 3 배열
+
+----------------------------------------------------
+# List
+val list : List<String> = listOf()
+val list = listOf()
+
+val mlist = mutableListOf("보쌈", "청국장")  //요소 변경 가능한 리스트
+
+mlist.add("쌈밥")     //["보쌈", "청국장", "쌈밥"]
+mlist.removeAt(0)     //["청국장", "쌈밥"]
+mlist[1] = "공모청약"  //["청국장", "공모청약"]
+
+
+----------------------------------------------------
+# Map
+val map = mapOf("a" to 1, "b" to 2, "c" to 3)
+val map = mutableMapOf("a" to 1, "b" to 2, "c" to 3)
+
+for( (key, value) in map){
+  println("$key -> $value")
+}
+
+----------------------------------------------------
+# Set
+val name = setOf("A", "B", "C")
+val name = mutableSetOf("A", "B", "C")
+
+name.add("NOA")
+name.remove("A")
+
+if(name.contains("NOA")){
+  
+}
+
+
 
 ----------------------------------------------------
 # for문
@@ -51,3 +90,8 @@ for(i in 1 .. 100 step 2){
 }
 
 ----------------------------------------------------
+# 정렬
+var arr = intArrayOf(1,3,2,4,5)
+
+arr.sort()
+arr.sortDescending()
