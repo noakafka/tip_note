@@ -109,34 +109,6 @@ map = [[0 for i in range(10)] for i in range(10)]   ---> same
 maxi = max(map(max, graph))
 
 
-
-
-# 2차원 리스트를 인자로 넘겨줄 때!!!!
-무조건 Deepcopy를 해서 쓰자!!!!!!
-
-def dfs(graph):
-    temp = copy.deepcopy(graph)
-
-
-혹은 한 함수 안에서 여러번 인자로 넘겨줄 때
-
-def dfs(graph):
-    temp = copy.deepcopy(graph)
-    // 이 때, temp를 매번 다시 받아줘야함
-    a = up(temp)
-    temp = copy.deepcopy(graph)
-    b = up(temp)
-    temp = copy.deepcopy(graph)
-    c = up(temp)
-    temp = copy.deepcopy(graph)
-    d = up(temp)
-    temp = copy.deepcopy(graph)
-
-
-
-
-
-
 # 2차원 리스트의 동적 할당
 map = []                    // 배열 생성
 map.append([1,2,3])         // 배열을 map에 append      ----> result : [[1,2,3]]
@@ -247,14 +219,19 @@ stack = []
     3) 더 이상 2번과정을 수행할 수 없을 때까지 반복.
     
 4. 예제 소스
-def dfs(graph, v, visited):
-    # 현재 노드를 방문처리
-    visited[v] = true
-    # 현재 노드와 연결된 다른 노드를 재귀적 방문
-    for i in graph[v]:
-        if not visited[i]:
-            dfs(graph, i, visited)
-            
+def dfs(graph, start_node):
+    visit = list()
+    stack = list()
+
+    stack.append(start_node)
+
+    while stack:
+        node = stack.pop()
+        if node not in visit:
+            visit.append(node)
+            stack.extend(graph[node])
+
+    return visit         
             
 
 # BFS 
@@ -275,18 +252,20 @@ queue.reverse() //reverse
     3) 더 이상 2번과정을 수행할 수 없을 때까지 반복.
     
 4. 예제 소스
-def bfs(graph, start, visited):
-    # 큐 구현
-    queue = deque([start])
-    # 현재 노드를 방문처리
-    visited[start] = true
-    # 큐가 빌 때까지 반복
+def bfs(graph, start_node):
+    visit = list()
+    queue = list()
+
+    queue.append(start_node)
+
     while queue:
-        v = queue.popleft()
-        for i in graph[v]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i] = True
+        node = queue.pop(0)
+        if node not in visit:
+            visit.append(node)
+            queue.extend(graph[node])
+
+    return visit
+
                 
 5. Dictonary를 이용해서 depth 최적화하면 DP와 같은 원리 적용
 
