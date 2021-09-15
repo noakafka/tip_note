@@ -2,7 +2,7 @@ https://deque.tistory.com/108?category=984011
 https://github.com/5seunghoon/Kotlin-MVVM-Sample/tree/master/app/src/main/java/com/tistory/deque/kotlinmvvmsample
 https://deque.tistory.com/109?category=984011
 
-  
+https://github.com/JaeYeopHan/Interview_Question_for_Beginner
   컴퓨터 사이언스 기술
 프로세스와 쓰레드의 차이점은 무엇인가요?
 데드락이란 무엇인가요?
